@@ -179,21 +179,12 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 4. Add tests
 5. Submit a pull request
 
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## 🆘 Support
 
 - **Documentation**: [docs.usmlenextgen.com](https://docs.usmlenextgen.com)
 - **Issues**: [GitHub Issues](https://github.com/yourusername/usmle-nextgen/issues)
 - **Email**: support@usmlenextgen.com
 
-## 🙏 Acknowledgments
-
-- **Evalio AI**: Design inspiration
-- **UWorld**: Question bank format reference
-- **Medical education community**: Continuous feedback and support
 
 ---
 
