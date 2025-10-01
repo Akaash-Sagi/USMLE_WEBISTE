@@ -1,6 +1,10 @@
+"use client";
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { useDashboardAccess } from "@/context/DashboardAccessContext"
+import { useEffect } from "react"
 import Link from "next/link"
 import { 
   Brain, 
@@ -19,6 +23,12 @@ import {
 } from "lucide-react"
 
 export default function Dashboard() {
+  const { setHasVisitedDashboard } = useDashboardAccess();
+
+  useEffect(() => {
+    setHasVisitedDashboard(true);
+  }, [setHasVisitedDashboard]);
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}

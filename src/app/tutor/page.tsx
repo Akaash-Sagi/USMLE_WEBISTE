@@ -1,9 +1,34 @@
+"use client";
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { useDashboardAccess } from "@/context/DashboardAccessContext"
+import { useRouter } from "next/navigation"
+import { useEffect } from "react"
 import { Brain, Send, MessageCircle, Lightbulb } from "lucide-react"
 import Link from "next/link"
 
 export default function Tutor() {
+  const { hasVisitedDashboard } = useDashboardAccess();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!hasVisitedDashboard) {
+      router.replace("/dashboard");
+    }
+  }, [hasVisitedDashboard, router]);
+
+  if (!hasVisitedDashboard) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="text-center">
+          <h2 className="text-2xl font-bold text-foreground mb-2">Redirecting to Dashboard...</h2>
+          <p className="text-muted-foreground">Please visit the dashboard first to access AI Tutor.</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
